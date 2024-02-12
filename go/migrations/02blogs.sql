@@ -3,6 +3,8 @@
 CREATE TABLE IF NOT EXISTS codeforge.blogs (
     id SERIAL PRIMARY KEY,
     user_id BIGINT NOT NULL,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
     blog_image TEXT,
     created_at BIGINT NOT NULL,
     updated_at BIGINT DEFAULT NULL,

@@ -15,6 +15,15 @@ import (
 
 type CodeForgeDB interface {
 	CreateUserDB(c *gin.Context, user *models.User) error
+	LoginUserDB(c *gin.Context, userEmail *string) (*models.LoginUserRes, error)
+	UpdateUserDB(c *gin.Context, update *models.UpdateUserReq) error
+	DeleteUserDB(c *gin.Context, userid *int64) error
+	CreateBlogDB(c *gin.Context, blog *models.BlogsReq) error
+	UpdateBlogContentDB(c *gin.Context, uContent *models.UpdateBlogContentReq) error
+	UpdateBlogTitleDB(c *gin.Context, uTitle *models.UpdateBlogTitleReq) error
+	UpdateBlogImgDB(c *gin.Context, uimg *models.UpdateBlogImgReq) error
+	DeleteBlogDB(c *gin.Context, delBlog *models.DeleteBlogReq) error
+	CreateQuestionDB(c *gin.Context, question *models.Question) error
 }
 
 type CodeForgeDBImpl struct {
